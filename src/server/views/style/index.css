@@ -1,0 +1,10 @@
+body{
+    position: relative;
+}
+h1{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-family: Protest Guerrilla,sans-serif;
+}

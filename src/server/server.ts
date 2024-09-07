@@ -2,9 +2,13 @@ import express,{ Request, Response } from 'express';
 import ErrorPersonalizado from '../Types/ErrorPersonalizado';
 import morgan from 'morgan';
 import cors from 'cors';
+import path from 'path';
 import router from './routes/index';
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'views')));
+app.set('views', path.join(__dirname, 'views')); 
+app.set('view engine', 'pug');
 
 app.use(express.json());
 app.use(morgan("dev"));

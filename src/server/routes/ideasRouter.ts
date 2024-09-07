@@ -4,7 +4,7 @@ import validateIdea from '../middlewares/validateIdea';
 
 const ideasRouter = express.Router();
 
-ideasRouter.get("/",ideasController.getIdeas);
-ideasRouter.post("/",validateIdea, ideasController.postIdea);
+ideasRouter.get("/",ideasController.getIdeasPage);
+ideasRouter.post("/api",validateIdea, ideasController.postIdea);
 
 export = ideasRouter;
