@@ -1,5 +1,14 @@
 import app from "./server/server";
+import dbCon from "./server/config/dbConfig";
 const port:number = 3000;
-app.listen(port, ()=>{
-    console.log("Server listen in port ",port)
-})
+dbCon()
+    .then(()=>{
+        console.log("DB connect")
+        app.listen(port, ()=>{
+            console.log("Server listen in port ",port)
+        })
+
+    })
+    .catch((err)=>{
+        console.log(err.message);
+    })

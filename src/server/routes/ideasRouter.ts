@@ -1,9 +1,10 @@
 import express from 'express';
+import ideasController from '../controllers/ideasController';
+import validateIdea from '../middlewares/validateIdea';
 
 const ideasRouter = express.Router();
 
-ideasRouter.get("/",(req,res)=>{
-    res.status(200).json("holis")
-});
+ideasRouter.get("/",ideasController.getIdeas);
+ideasRouter.post("/",validateIdea, ideasController.postIdea);
 
-export default ideasRouter;
+export = ideasRouter;
