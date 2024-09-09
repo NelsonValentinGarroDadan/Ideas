@@ -2,17 +2,28 @@ doctype html
 html
   head
     meta(charset="utf-8")
-    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" ,crossorigin="anonymous")
     link(rel="stylesheet", href="./style/reset.css")
     link(rel="stylesheet", href="./style/index.css")
     link(rel="preconnect", href="https://fonts.googleapis.com")
-    link(rel="preconnect" ,href="https://fonts.gstatic.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com")
     link(href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap", rel="stylesheet")
-    
-    title Home
+    link(rel="icon", type="image/x-icon", href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAxlBMVEXtclMAAAC/z9bE1Nv0dVXUaFB1f4PocFHG196Wo6gzNjjxdFWwVT4qFA+FQC56hInTaFDgbE////9bYmZocHRpMyd2Oi0LCwsODg6eTjwmEw7tbk1ud3vynYnxmIJNTU0WFhabm5vk5ORkbHBBR0nJyclGIhmwvsWeq7FMUlVUW14cHh/S0tJoaGh9PCzMYkeoUj2GkZYXCwgqLS+5vb18fn6XYVRdOjKQRDE6P0FYKyGQnKGqub+2xcuvVkJfX186HBZEKCGf6uSqAAAGVElEQVR4nO2da1/aSBSHAygXaaVEK2rZBVKu3lBZu+sWu+73/1ILmUnIxDGZOTlnXOA8bwo/mfPPQ7iE6Vw8PyQY9PolNG4DP+ZmiFfXgn5vIA/CC/1ukesvNoLIlW0QT/TacIRf/I/I8Am/tgUjYUggWPrxm+RPguIWjNaGAUXl+TfJXxTVLQhWhtjvwTV3TU9SGxOUt+DW9+JTOD42RTz+qCuQn5V3iQd8igW9pndvXFfhTpQdypRncdeo5dmK10gr8AbixuP8wBjR4qReWVNvibu1xAM2gmtH88JJaqJsS6Z0xV2Tls3DNb8eRYuB1xM35geeKZFhpbymIg3bzfyWFjTb0lCmnEpDk7aHX0JF0aLniS/6sbng/9+wHRoeihdq35Ov7x00PBNN2FADG6LAhlmwYS5siAIbZsGGubAhCmyYBRvmwoYosGEWbJgLG6LAhlmwYS5siAIbZsGGubAhCmyYBRvmwoYoEBg2jdEb1iwqmITU9IYmbduhYFs1/PrJAq3hhU0FAy60hkZN7y9C/lYMAXRl9gO4ggkPMqUKrgA3bIjs8gRcwYSJCKlMwRXAhouypDIDh+czq0QxR9ASYMNpnD3pQGvk0pnEzyP4JEINf8aCq3DEoakK/WkipQEsAjO8Wm6iV+EvJ8D0bE5elJTlFaiKNLyaNsyZlpPJYXp5adHejKUmxeYoG1eKYVcMHzOjrMOivZuU+qlqqC+4zVR23/A7G247+2dYJ+btM1ihjlQ/aa6PaJlVJ6pjZVKdEWdeK4YO6CqC8F9DtrgzLF0lLjJpLvO0ODSMfq9v+gWc4NKwFJ9Dl6FODWW3QOWny1Bp+PiZFDm7o6V2upCFXoY8KoY2vYmArkGZUlUNPZrQA9mb+DVliNqfm6amNawRpckeYTZEhQ1xYUMK2BAXNqSADXFhQwrYEJc9M+ywIQ5siAsbUsCGuLAhBWyICxtSwIa4sCEFbIgLG1LAhriwIQU7b9h8xxB3IlGcJv6XO23o1Shpaw3bVGlf1qQM3RCNxXA5YMitoZxcUGACjD1ODeNpNuWFu1CnhtFMKfjsEAAuDeOBe07fie4MF42N4PosunqhRobDVpWUVnqeTaU8pY58Vgyt5syAKKehDpTjvGPDnR2rz4ZbzB4Y7v77MGVo91n6thwFxVJSn6VW34ethosvt6Jfoa2hYmjJ9YNygTKluUBZTJWUn9eQIuCrtsQbl3BVhcQTCZ1HBL8ujcNJf+3FZxH8NMINOy9RNni1AwMW8UkEvURLhX5bRCdxCa5gwjJ6E0ILFDB0u7ZJF1oA1NcmmqTWp5kjd5jNRdnU+jRGTWVf25lquEOrKEX9pbtrqK4TxYY62BAFNsyCDXNhQxTYMAs2zIUNUWDDLNgwFzZEgQ2zYMNc2BAFNsyCDXNhQxTYMAs2zIUNUWDDLNgwFzZEgQ2z2FtDi7Ul9YbIO+m8Y2jStBYKtlVDm6VEL0WTU9UQezHS1JKncizGpdkRJtYvLTDaJMqmnTsRTbMBj2kpYBhvkHIOLpFPJwp5AVcAG54WHnFmwmb0HHQBcLDhsBxDuDj3SWL4JXBLIqjh93ICsjk+VWUI7SmoRmRota7+sKpspLNSnLTwF8mftdJL8S/tluK/Vgzt9kbQjMAm2NugaMrejdXfQcPdn1HChltP2pB4/qH+GEipC8NzyL5rAHSbqOFv1aYyU84hPamN8Ii223uLw7ncneRmhlO6XSHTsS7n4y9jQ9o5GgrnLg2H8U+hobtQp4bxSXR4Ch0bPqhdO06IDK32dLbnXqSk1qe5p0oTezqPwxBIbyKAd3bSIUpTdtI5B/QIA/jAdaLYEAk2xIUNKWBDXNiQAjbEhQ0pYENc2JACNsSFDSlgQ1zYkAI2xIUNKWBDXNiQAjbEhQ0pYENc9s6wH/473kHDz2HIwuuJtDmpolvD0O/wlwj5xxuIG4/zgyTKFJ/mQVHke6ElRs/V5UgFr3BdLc2kYGngBfJWaXycYL5RbNYujgsjIoZdgRxOU7yslruzFa+RVuD5tyUdx5Fis/2qfcCW8OR7fqD/0/yb5NjtISETrAz9kfZPP36X/Ov2kHC58deGesWRL9G/ireDlWBo6AdvLY4iQf/mA44Mh9vAjwxXjoNeP/nHpyA29EfPH3WIBej3BlLhP7JNrowtJABbAAAAAElFTkSuQmCC")
+    title Muro de Ideas
   body
-    h1(class="text-center") Muro de Ideas
-    
-    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" ,integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" ,crossorigin="anonymous")
-    
-   
+    header
+      button(type="button") $ Donar
+      a(href="#") 
+        h1 Muro de Ideas
+      button(type="button", id="btn-agr") Pintar 
+
+    - const pastelColors = ['#FABC3F', '#E85C0D', '#C7253E', '#821131', '#A7D2E0', '#F9A1A6', '#B6E2B8', '#E4A0A1', '#B4A4E8', '#B9E5D4']
+    section.container-cards
+      each card in [1, 2, 3, 4]
+        div.column
+          each card, index in ideas
+           - const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)]
+            div.card(style=`background-color: ${randomColor};`)
+              h2.card-content= card.content
+              hr.card-hr
+              p.card-autor= `- ${card.autor}`
+    script(src="./scrpts/index.js") 

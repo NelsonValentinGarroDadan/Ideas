@@ -13,8 +13,8 @@ export default {
     },
     getIdeasPage : async (req:Request, res:Response)=>{
         try{
-            // const ideas = await Idea.getIdeas();
-            res.render('index',{title:"homepage"});
+            const ideas = await Idea.getIdeas();
+            res.render('index',{ideas: ideas});
         }catch(err){
             console.log(err);
             res.status(500).json({ message: 'Error al intentar rendedizar el index'});
