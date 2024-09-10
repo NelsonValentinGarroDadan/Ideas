@@ -19,20 +19,28 @@ exports.default = {
             const ideas = yield Ideas_1.default.getIdeas();
             res.status(200).json(ideas);
         }
-        catch (error) {
-            res.status(500).json({ message: 'Error al intentar traer los datos de la Base de Datos' });
+        catch (err) {
+            console.log(err);
+            res.status(500).json({ message: 'Error al intentar traer las ideas de la BD' });
         }
     }),
     postIdea: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const { content, autor } = req.body;
-        console.log(autor);
         try {
             const idea = yield Ideas_1.default.postIdea(content, autor);
             res.status(200).json(idea);
         }
         catch (err) {
+            res.status(500).json({ message: 'Error al intentar crear la idea en la base de datos' });
+        }
+    }),
+    getIdeasPage: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            res.render('index');
+        }
+        catch (err) {
             console.log(err);
-            res.status(500).json({ message: 'Error al intentar crear la base de datos' });
+            res.status(500).json({ message: 'Error al intentar rendedizar el index' });
         }
     })
 };

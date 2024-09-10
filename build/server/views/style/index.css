@@ -45,7 +45,6 @@ header button:hover, header a:hover{
     height: auto;
     border-radius: 0;
     padding: 40px 5px;
-    cursor: pointer;
 }
 .card-content{
     width: 100%;
