@@ -73,7 +73,7 @@ const  formSubmit = (form) =>{
             const data = getData(form);
             const validacion = validateData(data); 
             if(validacion.status){
-                fetch("https://ideas-toc6.onrender.com/ideas/api",{
+                fetch(`${__dirname}/ideas/api`,{
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -169,7 +169,7 @@ const addCardToRandomColumn = (idea) => {
 
 async function fetchData() {
     try {
-        const res = await fetch("https://ideas-toc6.onrender.com/ideas/api", {
+        const res = await fetch(`${__dirname}/ideas/api`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
