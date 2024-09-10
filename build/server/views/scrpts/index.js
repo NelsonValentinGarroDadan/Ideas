@@ -72,7 +72,7 @@ const  formSubmit = (form) =>{
             const data = getData(form);
             const validacion = validateData(data); 
             if(validacion.status){
-                fetch(`./api`,{
+                fetch(`./ideas/api`,{
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -168,7 +168,7 @@ const addCardToRandomColumn = (idea) => {
 
 async function fetchData() {
     try {
-        const res = await fetch(`./api`, {
+        const res = await fetch(`./ideas/api`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
