@@ -5,6 +5,8 @@ import cors from 'cors';
 import path from 'path';
 import router from './routes/index';
 
+const __dirname = path.resolve();
+
 const app = express();
 app.use(express.static(path.join(__dirname, 'views')));
 app.set('views', path.join(__dirname, 'views')); 
