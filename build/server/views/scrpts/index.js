@@ -1,6 +1,5 @@
 const body = document.getElementsByTagName('body')[0];
 const btnAgregar = document.getElementById('btn-agr');
-const apiUrl = process.env.API_URL;
 
 const handleOutsideClick = (e) => {
     const form = document.querySelector('.form-idea');
@@ -73,7 +72,7 @@ const  formSubmit = (form) =>{
             const data = getData(form);
             const validacion = validateData(data); 
             if(validacion.status){
-                fetch(`${apiUrl}/ideas/api`,{
+                fetch(`./api`,{
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -169,7 +168,7 @@ const addCardToRandomColumn = (idea) => {
 
 async function fetchData() {
     try {
-        const res = await fetch(`${apiUrl}/ideas/api`, {
+        const res = await fetch(`./api`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
