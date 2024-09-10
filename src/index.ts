@@ -1,6 +1,6 @@
 import app from "./server/server";
 import dbCon from "./server/config/dbConfig";
-const port:number = 3000;
+const port:number = Number(process.env.PORT) || 3000;
 dbCon()
     .then(()=>{
         console.log("DB connect")
